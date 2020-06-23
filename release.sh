@@ -64,9 +64,8 @@ mvn $MAVEN_SETTINGS_OPTION help:effective-settings
 
 # Do the release
 echo "Do mvn release:prepare with settings $MAVEN_SETTINGS_OPTION and arguments $MAVEN_ARGS"
-mvn $MAVEN_SETTINGS_OPTION $MAVEN_REPO_LOCAL -Dusername=$GITHUB_ACCESS_TOKEN release:prepare -B -Darguments="$MAVEN_ARGS"
+mvn $MAVEN_REPO_LOCAL -Dusername=$GITHUB_ACCESS_TOKEN release:prepare -B -Darguments="$MAVEN_ARGS"
 
-if [[ $SKIP_PERFORM == "false" ]]; then
-     echo "Do mvn release:perform with arguments $MAVEN_ARGS"
-     mvn $MAVEN_SETTINGS_OPTION $MAVEN_REPO_LOCAL release:perform -B -Darguments="$MAVEN_ARGS"
-fi
+echo "Do mvn release:perform with arguments $MAVEN_ARGS"
+mvn $MAVEN_REPO_LOCAL release:perform -B -Darguments="$MAVEN_ARGS"
+
