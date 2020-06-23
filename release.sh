@@ -59,9 +59,6 @@ fi
 echo "Move to folder $MAVEN_PROJECT_FOLDER"
 cd $MAVEN_PROJECT_FOLDER
 
-# info
-mvn $MAVEN_SETTINGS_OPTION help:effective-settings
-
 # Do the release
 echo "Do mvn release:prepare with settings $MAVEN_SETTINGS_OPTION and arguments $MAVEN_ARGS"
 mvn $MAVEN_REPO_LOCAL -Dusername=$GITHUB_ACCESS_TOKEN release:prepare -B -Darguments="$MAVEN_ARGS"
