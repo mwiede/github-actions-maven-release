@@ -1,4 +1,4 @@
-FROM maven:3.6-openjdk-15
+FROM maven:3.6-openjdk-16
 
 RUN microdnf install git gnupg2
 
