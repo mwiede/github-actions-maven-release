@@ -1,4 +1,4 @@
-FROM maven:3.8.3-eclipse-temurin-17
+FROM 3.9.5-eclipse-temurin-21
 
 RUN apt-get update && apt-get install -y gnupg2
 
