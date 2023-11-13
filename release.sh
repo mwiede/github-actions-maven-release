@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-
+git config --global --add safe.directory $(pwd)
 # avoid the release loop by checking if the latest commit is a release commit
 readonly local last_release_commit_hash=$(git log --author="$GIT_RELEASE_BOT_NAME" --pretty=format:"%H" -1)
 echo "Last $GIT_RELEASE_BOT_NAME commit: ${last_release_commit_hash}"
